@@ -1,0 +1,26 @@
+<div>
+   
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr *ngFor="let data of items ; let i=index" [ngClass]="{'strikeout' : data.completed==true}">
+            <td>{{data.id}}</td>
+            <td >{{data.title}}</td>
+
+            <td > 
+                <input type="checkbox"  class="box" [checked]="data.completed" (change)="doSomething($event)" >
+                    
+                <!-- <input type="checkbox"  class="box" (change)="doSomething($event)" *ngIf="data.completed==selected" > -->
+
+            </td>
+          </tr>
+        </tbody>
+      </table>          
+</div>
