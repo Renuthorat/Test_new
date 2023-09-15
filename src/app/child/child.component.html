@@ -1,6 +1,5 @@
 <div>
-   
-    <table class="table table-bordered">
+    <table class="table table-bordered ">
         <thead class="thead-dark">
           <tr>
             <th scope="col">Id</th>
@@ -9,17 +8,13 @@
           </tr>
         </thead>
         <tbody>
-
           <tr *ngFor="let data of items ; let i=index" [ngClass]="{'strikeout' : data.completed==true}">
             <td>{{data.id}}</td>
             <td >{{data.title}}</td>
-
             <td > 
-                <input type="checkbox"  class="box" [checked]="data.completed" (change)="doSomething($event)" >                    
-                <!-- <input type="checkbox"  class="box" (change)="doSomething($event)" *ngIf="data.completed==selected" > -->
-
+                <input type="checkbox"  class="box" [checked]="data.completed" (change)="userData($event)" >                    
             </td>
           </tr>
         </tbody>
-      </table>          
+      </table>             
 </div>

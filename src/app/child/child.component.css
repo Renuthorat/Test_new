@@ -1,26 +1,32 @@
-.box{
-    width:30px;
-    height:30px
+.box {
+  width: 30px;
+  height: 30px
 }
-table { border-collapse: collapse; empty-cells: show; }
 
-td { position: relative; }
+table {
+  border-collapse: collapse;
+  empty-cells: show;
+  width: 50%;
+
+}
+
+td {
+  position: relative;
+}
 
 tr.strikeout td:before {
   content: " ";
   position: absolute;
   top: 50%;
   left: 0;
-  border-bottom: 1px solid #111;
+  border-bottom: 1px solid #c92323;
   width: 100%;
 }
 
-tr.strikeout td:after {
-  content: "\00B7";
-  font-size: 1px;
+td {
+  width: 100px;
 }
 
-/* Extra styling */
-td { width: 100px; }
-th { text-align: left; }
-
+th {
+  text-align: left;
+}
