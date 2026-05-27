@@ -1,0 +1,8 @@
+<div class="list-group">
+    <!-- <ea-17-recipe-item *ngFor="let recipe of recipeList" [getRecipeFromParent]="recipe" (sendEventToParentList)=
+    "catchEventFromChildItem(recipe)">
+    </ea-17-recipe-item> -->
+    <button class="btn btn-primary btn-sm btn-block" routerLink="new">Add New Recipe </button>
+    <app-recipe-item *ngFor="let recipe of recipeList ; let i=index" [getRecipeFromParent]="recipe"  [currentRecipeIndex]="i">
+    </app-recipe-item>
+</div>

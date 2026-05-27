@@ -1,0 +1,12 @@
+ .list-group-item .my-ingredient-item {
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    color: grey;
+    text-decoration:none;
+    cursor:pointer;
+}
+ .ingredient-img{
+    width:50px;
+
+}

@@ -1,0 +1,25 @@
+<img [src]="recipe.imgData" alt="" class="w-50">
+<h1>{{recipe.name}}</h1>
+<p><span class="small">Description:</span>{{recipe.description}}</p>
+<hr>
+<button class="btn btn-sm btn-info" (click)="sendIngredient()">Send to shopping List
+</button>
+<button class=" btn btn-sm btn-warning" routerLink="edit">
+    <i class=" fa fa-pencil-square-o " aria-hidden="true"></i>
+</button>
+<div class="list-group">
+    <div class="list-group-item" *ngFor="let ingredient of recipe.ingredientList">
+        <div class="my-ingredient-item">
+            <div>
+                <img [src]="ingredient.img" alt="" class="ingredient-img ">
+            </div>
+            <div>
+                <h6 class="m-0 p-0">{{ingredient.name}}</h6>
+                <p class="small m-0 p-0">{{ingredient.brand}}</p>
+            </div>
+            <div>
+                <h6>Qty:<span class="small">{{ingredient.qty}}</span> | Price :<span class="small">{{ingredient.price | currency : 'INR'}}</span></h6>
+            </div>
+        </div>
+    </div>
+</div>

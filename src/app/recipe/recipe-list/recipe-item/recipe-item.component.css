@@ -1,0 +1,16 @@
+.list-group-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color: grey;
+    text-decoration:none;
+    cursor:pointer;
+}
+.rec-img{
+    width:65px;
+}
+
+
+
+
+

@@ -1,0 +1,49 @@
+<p>recipe-form works!</p>
+<h4>We are here to {{isNewRecipe ? 'create a new' :'edit a existing'}} recipe</h4>
+<form [formGroup]="myRecipeForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="recName">Recipe Name</label>
+        <input type="text" id="recName" placeholder="Enter Recipe Name" class="form-control" formControlName="rName">
+    </div>
+    <div class="form-group">
+        <label for="recImg">Recipe Image Path</label>
+        <input type="text" id="recImg" placeholder="Enter Recipe Image Path" class="form-control"
+            formControlName="rImg">
+    </div>
+    <div class="form-group">
+        <label for="recDesc">Recipe Description</label>
+        <textarea name="" id="recDesc" placeholder="Enter Recipe Description" cols="30" rows="10" class="form-control"
+            formControlName="rDesc"></textarea>
+    </div>
+    <div formArrayName="rIngreds">
+        <div class="row" *ngFor="let ingred of myRecipeForm.get('rIngreds').controls; let i=index" [formGroupName]="i">
+            <div class="col-2 form-group">
+                <label for="iName">Ing Name</label>
+                <input type="text" id="iName" class="form-control" formControlName="nameIngred">
+            </div>
+            <div class="col-2 form-group">
+                <label for="iBrand">Ing Brand </label>
+                <input type="text" id="iBrand" class="form-control" formControlName="brandIngred">
+            </div>
+            <div class="col-2 form-group">
+                <label for="iQty">Ing Quantity</label>
+                <input type="text" id="iQty" class="form-control" formControlName="qtyIngred">
+            </div>
+            <div class="col-2 form-group">
+                <label for="iPrice">Ingredient Price</label>
+                <input type="text" id="iPrice" class="form-control" formControlName="priceIngred">
+            </div>
+            <div class="col-2 form-group">
+                <label for="imgIngred">Ingredient Image</label>
+                <input type="text" id="imgIngred" class="form-control" formControlName="imgIngred">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <button type="button" class="btn btn-primary btn-sm mb-2" (click)="addnewIngredient()">Add New
+                    Ingredient</button>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-info btn-sm" type="submit">{{isNewRecipe ? 'create' :'Save'}} Recipe</button>
+</form>

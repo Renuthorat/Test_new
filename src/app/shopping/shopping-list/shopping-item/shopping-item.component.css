@@ -1,0 +1,12 @@
+.my-ingredient-item{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    color:gray;
+    text-decoration: none;
+    cursor:pointer;
+}
+
+.ingredient-img{
+    width:80px;
+}
